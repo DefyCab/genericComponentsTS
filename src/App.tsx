@@ -5,22 +5,22 @@ export default function App() {
   return (
     <List
       data={[
-        { id: 1, name: "Love" },
-        { id: 2, name: "Erik" },
+        { id: 1, name: "Love", age: 45 },
+        { id: 2, name: "Erik", age: 48 },
       ]}
       getKey={(person) => person.id}
-      getRow={(person) => <div>{person.name}</div>}
+      getRow={(person) => <div>{person.name} {person.age}</div>}
     />
   )
 }
 
-type ListProps = {
-  data: { id: number; name: string }[]
-  getKey: (iten: { id: number; name: string }) => React.Key
-  getRow: (item: { id: number; name: string }) => ReactNode
+type ListProps<T> = {
+  data: T[]
+  getKey: (iten: T) => React.Key
+  getRow: (item: T) => ReactNode
 }
 
-function List({ data, getKey, getRow }: ListProps) {
+function List<K>({ data, getKey, getRow }: ListProps<K>) {
   return data.map((item) => (
     <Fragment key={getKey(item)}>{getRow(item)}</Fragment>
   ))
