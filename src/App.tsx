@@ -5,7 +5,14 @@ import "./App.css"
 export default function App() {
   return (
     <>
-      <Child name="Love" age={45}>
+      <Child
+        style={{
+          fontWeight: "lighter",
+          color: "lightgoldenrodyellow",
+        }}
+        name="Love"
+        age={45}
+      >
         I'm just starting my coding journey!
       </Child>
       <List
