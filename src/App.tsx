@@ -1,5 +1,5 @@
-import React, { Fragment, ReactNode } from "react"
-import { Child } from "./Chilld"
+import { Child } from "./components/Chilld"
+import { List } from "./components/List"
 import "./App.css"
 
 export default function App() {
@@ -22,16 +22,4 @@ export default function App() {
       />
     </>
   )
-}
-
-type ListProps<T> = {
-  data: T[]
-  getKey: (iten: T) => React.Key
-  getRow: (item: T) => ReactNode
-}
-
-function List<K>({ data, getKey, getRow }: ListProps<K>) {
-  return data.map((item) => (
-    <Fragment key={getKey(item)}>{getRow(item)}</Fragment>
-  ))
 }
