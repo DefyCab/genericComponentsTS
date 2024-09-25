@@ -5,7 +5,9 @@ import "./App.css"
 export default function App() {
   return (
     <>
-      <Child />
+      <Child name="Love" age={45}>
+        I'm just starting my coding journey!
+      </Child>
       <List
         data={[
           { id: 1, name: "Love", age: 45 },
