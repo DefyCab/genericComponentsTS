@@ -6,9 +6,13 @@ export default function App() {
   return (
     <>
       <Child
-        style={{
+        h3style={{
           fontWeight: "lighter",
           color: "lightgoldenrodyellow",
+        }}
+        divstyle={{
+          fontWeight: "bold",
+          color: "goldenrod",
         }}
         name="Love"
         age={45}

@@ -4,15 +4,16 @@ type ChildProps = {
   name: string
   age: number
   children?: ReactNode
-  style?: React.CSSProperties
+  h3style?: React.CSSProperties
+  divstyle?: React.CSSProperties
 }
 
-export function Child({ name, age, children, style }: ChildProps) {
+export function Child({ name, age, children, h3style, divstyle }: ChildProps) {
   return (
-    <div>
-      <h3 style={style}> PropName: </h3> {name}
-      <h3> PropAge: </h3> {age}
-      <h3> Years left of coding: </h3> {65 - age}
+    <div style={divstyle}>
+      <h3 style={h3style}> PropName: </h3> {name}
+      <h3 style={h3style}> PropAge: </h3> {age}
+      <h3 style={h3style}> Years left of coding: </h3> {65 - age}
       <p>{children}</p>
     </div>
   )
